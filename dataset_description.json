@@ -1,0 +1,10 @@
+{
+  "Name": "Whole-Cell Patch-Clamp and Fluorescence Imaging of SuM Neurons in Mouse Brain Slices",
+  "Description": "Supramammillary nucleus (SuM) whole-cell patch-clamp recordings and confocal puncta imaging in acute mouse brain slices. Data are NWB; the complete source spreadsheets are provided verbatim under sourcedata/.",
+  "BIDSVersion": "1.0",
+  "DatasetType": "raw",
+  "License": "CC-BY-4.0",
+  "Authors": [
+    "Hoang, Brandon"
+  ]
+}
