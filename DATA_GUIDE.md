@@ -14,8 +14,8 @@ file. The complete source spreadsheets are included verbatim under `sourcedata/`
 
 | Modality | Suffix | Subjects | One NWB = |
 | --- | --- | --- | --- |
-| **Slice electrophysiology** | `_icephys.nwb` | LG282, LG320, LG389, LG543, LG588, LG593, LG639 | one recording **session** (all cells + files that day) |
-| **Confocal puncta imaging** | `_ophys.nwb` | LG445, LG449, LG609, LG615 | one **image** (ND2 z-stack) |
+| **Slice electrophysiology** | `_icephys.nwb` | 49 subjects (LG282-LG639) | one recording **session** (all cells + files that day) |
+| **Confocal puncta imaging** | `_ophys.nwb` | 16 subjects (LG445-LG673) | one **image** (ND2 z-stack); 10 images/subject |
 
 ### Layout
 ```
@@ -32,8 +32,10 @@ sub-<ID>/
 ```
 
 Filenames tell you subject + date directly (`sub-LG282_ses-20221216_icephys.nwb`
-= subject LG282, recorded 2022-12-16). Subject sex/DOB/injection/virus/sacrifice
-show on the dandiset landing page (DANDI derives them from each NWB's `Subject`).
+= subject LG282, recorded 2022-12-16). Subject **sex, strain (mouse line), genotype
+and age** show on the dandiset landing page (DANDI derives them from each NWB's
+`Subject`); **injection location, virus and sacrifice details** live in the `Subject`
+description/notes (and, for imaging, in `image_roi_info`).
 
 ---
 
@@ -92,8 +94,9 @@ Each ophys NWB embeds a **`metadata` processing module** with one table:
   | `roi_source_filename_column` (`Filename_i..v`) | the spreadsheet column it maps to |
   | `mouse_id`, `mouse_line`, `sex`, `injection_location`, `virus`, `anterior_posterior` | section + subject identity |
   | `quant_method` | `automated` or `manual` (the two source workbooks) |
-  | `puncta_count_cleaned` | this ROI's cleaned-puncta count |
-  | `source_excel` | which source workbook the row came from |
+  | `puncta_count_cleaned` | this ROI's cleaned-puncta count (the only count published) |
+  | `source_excel`, `nd2_file`, `roi_source_filename` | which workbook/row and the exact ND2 image + filename cell |
+  | `roi_1_ipsilateral`, `roi_5_ipsilateral`, `threshold_used`, `date_captured` | extra section identity / analysis provenance |
 
   **`ROI_N` is the image in `Filename_N`** (positional; the raw file numbering is
   reversed - `Filename_i` is the `...EGFP-5` file). Each image appears **twice** -
@@ -153,5 +156,3 @@ with NWBHDF5IO("sub-LG282_ses-20221216_icephys.nwb", "r") as io:
 | Puncta counts for an image | that NWB's `processing/metadata/image_roi_info`, or the `sourcedata/...` puncta workbooks by section + ROI (`ROI_N` <-> `Filename_N`) |
 | Automated vs manual puncta counts | that NWB's `image_roi_info` (`quant_method`), or the two `sourcedata/` puncta workbooks |
 | Sample min/max/mean of a trace | compute from `series.data` - NWB does not store it |
-
-_(These mice were **sacrificed**, not perfused.)_
