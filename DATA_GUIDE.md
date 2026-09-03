@@ -66,15 +66,20 @@ Each icephys NWB embeds a **`metadata` processing module** built from
 
 The same information is also written in prose on each **`IntracellularElectrode`**
 description (`general` > `intracellular_ephys` > `<cell_code>`), grouped by file, e.g.
-"Data channels by file - 2022_12_16_0006.abf: Imemb (pA, voltage-clamp), Vm_sec1 (mV, current-clamp); ... Command TTL for light delivery: IN 6 (TTL) (on/off command pulse, common to all cells recorded on this file)."
+"Data channels by file - 2022_12_16_0006.abf: Imemb (pA), Vm_sec1 (mV); ... Command TTL for light delivery: IN 6 (TTL) (on/off command pulse, common to all cells recorded on this file)."
 
 ### The traces
-`acquisition` holds the sweeps: `CurrentClampSeries` (unit `volts`),
-`VoltageClampSeries` (unit `amperes`), and the shared light-delivery command TTL
-as a `TimeSeries` named `<abf>_<chan>_TTL` (written once per ABF, common to all
-cells on a file - an on/off command pulse for light delivery, not a sync line).
-Each data series links to its `electrode` (= which cell). Two cells can share one
-ABF (patched on CH1 + CH2) - each resolves to its own channels in `cell_channel_map`.
+`acquisition` holds the sweeps, typed by the file's **clamp mode** (from `FileType`),
+not by channel unit - all channels in a file share one clamp mode:
+- a **current-voltage recording** (current clamp) -> `CurrentClampSeries` (recorded
+  voltage, volts) + `CurrentClampStimulusSeries` (command current, amperes);
+- a **light-pulse** file (voltage clamp) -> `VoltageClampSeries` (recorded current,
+  amperes) + `VoltageClampStimulusSeries` (command voltage, volts).
+
+The shared light-delivery command TTL is a `TimeSeries` named `<abf>_<chan>_TTL`
+(written once per ABF, common to all cells on a file). Each series links to its
+`electrode` (= which cell). Two cells can share one ABF (patched on CH1 + CH2) -
+each resolves to its own channels in `cell_channel_map`.
 
 ---
 
