@@ -31,7 +31,7 @@ assetsSummary:
     schemaKey: MeasurementTechniqueType
   - name: surgical technique
     schemaKey: MeasurementTechniqueType
-  numberOfBytes: 24067260983
+  numberOfBytes: 24129057410
   numberOfFiles: 214
   numberOfSubjects: 64
   schemaKey: AssetsSummary
@@ -40,11 +40,11 @@ assetsSummary:
     name: Mus musculus - House mouse
     schemaKey: SpeciesType
   variableMeasured:
-  - VoltageClampStimulusSeries
-  - CurrentClampSeries
-  - ProcessingModule
-  - VoltageClampSeries
   - CurrentClampStimulusSeries
+  - VoltageClampSeries
+  - CurrentClampSeries
+  - VoltageClampStimulusSeries
+  - ProcessingModule
   - OnePhotonSeries
   - OpticalChannel
   - ImagingPlane
