@@ -31,9 +31,9 @@ assetsSummary:
     schemaKey: MeasurementTechniqueType
   - name: voltage clamp technique
     schemaKey: MeasurementTechniqueType
-  numberOfBytes: 24323439665
-  numberOfFiles: 214
-  numberOfSubjects: 60
+  numberOfBytes: 23926076517
+  numberOfFiles: 213
+  numberOfSubjects: 59
   schemaKey: AssetsSummary
   species:
   - identifier: http://purl.obolibrary.org/obo/NCBITaxon_10090
@@ -44,9 +44,9 @@ assetsSummary:
   - ProcessingModule
   - OpticalChannel
   - OnePhotonSeries
-  - VoltageClampSeries
-  - CurrentClampSeries
   - VoltageClampStimulusSeries
+  - CurrentClampSeries
+  - VoltageClampSeries
   - CurrentClampStimulusSeries
 citation: Glassburn, Lauren; Krook-Magnuson, Esther (2026) Whole-Cell Patch-Clamp
   and Fluorescence Imaging of SuM Neurons in Mouse Brain Slices (Version draft) [Data
