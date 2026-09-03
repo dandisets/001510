@@ -9,9 +9,9 @@ access:
   status: dandi:OpenAccess
 assetsSummary:
   approach:
-  - name: microscopy approach; cell population imaging
-    schemaKey: ApproachType
   - name: electrophysiological approach
+    schemaKey: ApproachType
+  - name: microscopy approach; cell population imaging
     schemaKey: ApproachType
   dataStandard:
   - identifier: RRID:SCR_016124
@@ -21,33 +21,33 @@ assetsSummary:
     name: Neurodata Without Borders (NWB)
     schemaKey: StandardsType
   measurementTechnique:
-  - name: one-photon microscopy technique
-    schemaKey: MeasurementTechniqueType
-  - name: analytical technique
-    schemaKey: MeasurementTechniqueType
-  - name: surgical technique
-    schemaKey: MeasurementTechniqueType
   - name: current clamp technique
     schemaKey: MeasurementTechniqueType
   - name: voltage clamp technique
     schemaKey: MeasurementTechniqueType
-  numberOfBytes: 27343570616
-  numberOfFiles: 245
-  numberOfSubjects: 64
+  - name: analytical technique
+    schemaKey: MeasurementTechniqueType
+  - name: one-photon microscopy technique
+    schemaKey: MeasurementTechniqueType
+  - name: surgical technique
+    schemaKey: MeasurementTechniqueType
+  numberOfBytes: 24161976306
+  numberOfFiles: 215
+  numberOfSubjects: 65
   schemaKey: AssetsSummary
   species:
   - identifier: http://purl.obolibrary.org/obo/NCBITaxon_10090
     name: Mus musculus - House mouse
     schemaKey: SpeciesType
   variableMeasured:
-  - ImagingPlane
-  - ProcessingModule
-  - OpticalChannel
-  - OnePhotonSeries
   - VoltageClampStimulusSeries
   - CurrentClampSeries
+  - ProcessingModule
   - VoltageClampSeries
   - CurrentClampStimulusSeries
+  - OnePhotonSeries
+  - OpticalChannel
+  - ImagingPlane
 citation: Glassburn, Lauren; Krook-Magnuson, Esther (2026) Whole-Cell Patch-Clamp
   and Fluorescence Imaging of SuM Neurons in Mouse Brain Slices (Version draft) [Data
   set]. DANDI Archive. https://dandiarchive.org/dandiset/001510/draft
@@ -97,7 +97,7 @@ description: This dandiset contains whole-cell patch-clamp recordings and confoc
   and EGFP) were acquired to quantify hippocampal SypEGFP+ synaptic terminals (puncta)
   across ipsilateral, medial, and contralateral SuM. Electrophysiology and imaging
   are provided as NWB files (one per recording session / image); the complete source
-  spreadsheets are included verbatim under sourcedata/. Data span 11 mice (male and
+  spreadsheets are included verbatim under sourcedata/. Data span 65 mice (male and
   female, >P45).
 ethicsApproval:
 - contactPoint:
