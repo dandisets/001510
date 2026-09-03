@@ -27,13 +27,13 @@ assetsSummary:
     schemaKey: MeasurementTechniqueType
   - name: surgical technique
     schemaKey: MeasurementTechniqueType
-  - name: current clamp technique
-    schemaKey: MeasurementTechniqueType
   - name: voltage clamp technique
     schemaKey: MeasurementTechniqueType
-  numberOfBytes: 23594627702
-  numberOfFiles: 213
-  numberOfSubjects: 63
+  - name: current clamp technique
+    schemaKey: MeasurementTechniqueType
+  numberOfBytes: 23129275042
+  numberOfFiles: 212
+  numberOfSubjects: 62
   schemaKey: AssetsSummary
   species:
   - identifier: http://purl.obolibrary.org/obo/NCBITaxon_10090
@@ -44,10 +44,10 @@ assetsSummary:
   - OpticalChannel
   - ProcessingModule
   - ImagingPlane
-  - CurrentClampStimulusSeries
   - VoltageClampSeries
-  - CurrentClampSeries
   - VoltageClampStimulusSeries
+  - CurrentClampSeries
+  - CurrentClampStimulusSeries
 citation: Glassburn, Lauren; Krook-Magnuson, Esther (2026) Whole-Cell Patch-Clamp
   and Fluorescence Imaging of SuM Neurons in Mouse Brain Slices (Version draft) [Data
   set]. DANDI Archive. https://dandiarchive.org/dandiset/001510/draft
